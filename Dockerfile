@@ -81,13 +81,14 @@ RUN DEBIAN_FRONTEND=noninteractive      \
         ufw                             \
         unzip                           \
         zip                             \
-        zlib1g
-
-
-# install user management
-RUN DEBIAN_FRONTEND=noninteractive      \
-    apt install                      -y \
+        zlib1g                          \
         init
+
+
+# # install user management
+# RUN DEBIAN_FRONTEND=noninteractive      \
+#     apt install                      -y \
+#         init
 
 
 # Clean up installations
@@ -96,7 +97,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt --fix-broken install -y \
 
 # Copy the FileMaker Server .deb package into the container
 
-COPY install/filemaker-server-21.0.2.202-amd64.deb /install/
+# COPY install/filemaker-server-21.0.2.202-amd64.deb /install/
 
 ENV PATH_WITH_SPACE="Assisted Install.txt"
 COPY install/${PATH_WITH_SPACE} /install/
