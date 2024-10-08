@@ -108,5 +108,9 @@ EXPOSE 443
 EXPOSE 2399
 EXPOSE 5003
 
+COPY /entrypoint.sh .
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT [ "/entrypoint.sh" ]
 # Start the FileMaker Server process when the container runs
-CMD ["/sbin/init"]
+# CMD ["/sbin/init"]
